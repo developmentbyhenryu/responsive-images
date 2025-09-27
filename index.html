@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Responsive Images Examples</title>
     <!-- TO DO: Add your name to the meta author tag -->
-    <meta name="author" content="">
+    <meta name="author" content="Henry Urbina">
     <meta name="description" content="Code examples showing how to add responsive images to a website for art direction or for resolution switching">
 
     <link rel="stylesheet" href="styles.css">
 
     <!-- TO DO: Add the picturefill code here -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js" async></script>
 </head>
 
 <body id="top">
@@ -22,7 +22,15 @@
     <main id="main">
         <section>
             <h2>Responsive Images for Art Direction</h2>
+            <picture>
+                <source srcset="images/art-direction-sm.png" media="(max-width: 600px)">
 
+                <source srcset="images/art-direction-med.png" media="(min-width: 601px)  and (max-width: 999px)">
+
+                <source srcset="images/art-direction-lg.jpg" media="(min-width: 1000px)">
+
+                <img src="images/art-direction-lg.jpg" width="800" height="400" alt="">
+            </picture>
 
             <!-- TO DO: Add the responsive images for art direction here -->
 
@@ -32,7 +40,19 @@
             <h2>Responsive Images for Resolution Switching</h2>
 
             <!-- TO DO: Add the responsive images for resolution switching here -->
-
+            <img 
+            srcset="
+                images/resolution-switching-sm.jpg 300w,
+                images/resolution-switching-med.jpg 500w,
+                images/resolution-switching-lg.jpg 800w"
+            sizes="
+                (max-width: 450px) 300px,
+                (min-width: 451px) and (max-width: 699px) 500px,
+                (min-width: 700px) 800px"
+            src="images/resolution-switching-sm.jpg"
+            width="300" 
+            height="400" 
+            alt="A dark gray backpack with brown leather accents and a top handle.">
         </section>
     </main>
 
